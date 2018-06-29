@@ -58,7 +58,7 @@ class NameOrIdRetrieval():
 class IncrementingReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):
 
     def retrieve(self, request, *args, **kwargs):
-        ResourceView.objects.increment_view_count(version=2)
+        # ResourceView.objects.increment_view_count(version=2)
         return super(
             IncrementingReadOnlyModelViewSet, self).retrieve(self, request, *args, **kwargs)
 
