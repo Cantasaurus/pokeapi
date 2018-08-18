@@ -9,7 +9,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Paul Hallett', 'paulandrewhallett@gmail.com'),
+    ('Danny Canter', 'dannycanter123@gmail.com'),
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -20,7 +20,7 @@ BASE_URL = 'http://pokeapi.co'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['.pokeapi.co', 'localhost', '.pokedexweb.com']
+ALLOWED_HOSTS = ['.pokeapi.co', 'localhost', '.pokedexweb.com', '.amazonaws.com', 'api.pokedexweb.com']
 
 TIME_ZONE = 'Europe/London'
 
@@ -90,11 +90,11 @@ TEMPLATE_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pokeapi_co_db',
-        'USER': 'root',
-        'PASSWORD': 'pokeapi',
+        'NAME': 'pokeapi',
+        'USER': 'power_user',
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
         'CONN_MAX_AGE': 30
     }
 }
